@@ -3,37 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop Page</title>
-    <link rel="stylesheet" href="assets/css/shop.css">
+    <title>mubikishore - Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+    <!-- Header -->
     <header>
-        <div id="logo" style="text-align: center; margin-bottom: 20px;">
-            <a href="index.html">
-                <img src="assets/images/logo.png" alt="Logo">
-            </a>
+        <div id="logo" style="text-align: center; margin-bottom: 0px;">
+            <img src="assets/images/logo.png" alt="Logo">
+        </div>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
         </div>
         <nav>
-            <ul>
+            <ul id="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="projects.html">Projects</a></li>
                 <li><a href="shop.html">Shop</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                
             </ul>
         </nav>
     </header>
 
     <main>
         <section id="shop-container">
-            <h1>Shop Our Products</h1>
             <div class="product">
                 <img src="assets/images/product1.png" alt="Product 1">
                 <h2>Everything Bundle 2024</h2>
                 <p>This pack contains,
 
-                    16 Presets for Adobe Lightroom Mobile. (Dng)
+                    16 Presets for Adobe Lightroom Mobile. (xml)
                     
                     This is everything I use to colour grade my pictures on Lightroom Mobile.
                     
@@ -41,6 +44,16 @@
                     
                     Thank you for the support :D.</p>
                 <a href="https://topmate.io/mubikishore/1319689" target="_blank" class="buy-button">Buy Now</a>
+            </div>
+            <div class="product">
+                <img src="assets/images/product2.png" alt="Product 1">
+                <h2>Personal Five 2024</h2>
+                <p>This pack contains,
+
+                    5 Presets for Adobe Lightroom Mobile. (xml)
+                    These are my personal favorites and a much cheaper option to support me to keep making these videos.
+                    Thank you for the support :D.</p>
+                <a href="https://topmate.io/mubikishore/1383159" target="_blank" class="buy-button">Buy Now</a>
             </div>
         </section>
     </main>
@@ -55,5 +68,6 @@
         </ul>
         <p>&copy; 2025 MubiKishore. All rights reserved.</p>
     </footer>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>

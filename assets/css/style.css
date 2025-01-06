@@ -18,8 +18,8 @@ header {
     background-color: hsl(20, 100%, 50%);
     padding: 10px 20px;
     display: flex; /* Enable flexbox */
-    justify-content: space-between; /* Spread out the logo and the nav */
-    align-items: center; /* Vertically center the items */
+    justify-content: space-between; /* Spread out the logo and the nav/hamburger */
+    align-items: center; /* Vertically center items */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     position: fixed; /* Fix the header at the top */
     top: 0; /* Align it at the top of the page */
@@ -30,7 +30,7 @@ header {
 
 /* Add some margin to the body to account for the fixed header */
 body {
-    margin-top: 70px; /* Adjust this depending on the height of your header */
+    margin-top: 10px; /* Adjust this depending on the height of your header */
 }
 
 /* Logo */
@@ -42,15 +42,15 @@ body {
 }
 
 #logo img {
-    width: 300px; /* Logo width */
+    width: 150px; /* Logo width */
 }
 
 /* Navigation */
 nav ul {
     list-style: none;
     display: flex;
-    justify-content: flex-end; /* Align nav items to the right */
-    margin: 0; /* Remove margin */
+    flex-direction: row;
+    margin: 0; 
 }
 
 nav ul li {
@@ -60,11 +60,10 @@ nav ul li {
 nav ul li a {
     text-decoration: none;
     color: #fff;
-    font-weight: 600;
-    font-size: 25px;
-    font-family: 'metropolis';
-    text-transform: initial;
-    margin-right: 30px;
+    font-weight: 500px;
+    font-size: 15px;
+    font-family: 'Arial';
+    margin-right: 5px;
 }
 
 nav ul li a:hover {
@@ -77,7 +76,7 @@ nav ul li a:hover {
     flex-direction: column;
     gap: 0;
     padding: 0;
-    margin: 0;
+    margin-top: 120px;
 }
 
 .video-container {
@@ -128,34 +127,33 @@ footer ul {
 
 footer ul li {
     display: inline;
-    margin: 0 15px;
+    margin: 0 0px;
 }
 
 footer ul li a {
     color: #fff;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 10px;
 }
 
 footer p {
     margin-top: 10px;
-    font-size: 14px;
+    font-size: 10px;
 }
 
 footer {
     background-color: hsl(20, 100%, 50%);
     color: #fff;
-    padding: 40px;
+    padding: 20px;
     text-align: center;
     z-index: 50; /* Ensures the footer stays on top of other content */
 }
 
 footer ul {
     list-style: none;
-    display: flex;
     justify-content: center;
     margin-top: 0px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 footer ul li {
@@ -166,9 +164,9 @@ footer ul li a {
     text-decoration: none;
     color: #fff;
     font-weight:500;
-    font-size: 30px;
-    margin-right: 50px;
-    font-family: 'metropolis';
+    font-size: 15px;
+    margin-right: px;
+    font-family: 'Arial';
     text-transform: initial;
 
 }
@@ -178,7 +176,7 @@ footer ul li a:hover {
 }
 
 footer p {
-    font-size: 1rem;
+    font-size: .5rem;
 }
 
 /* Mobile Responsiveness */
@@ -212,20 +210,21 @@ footer p {
 /* About Section Styles */
 #about {
     text-align: center;
-    padding: 50px;
+    padding: 30px;
     color: #333;
-    margin-top: 250px;
+    margin-top: 100px;
+    margin-bottom: 100px;
 }
 
 #about h1 {
-    font-size: 8rem;
+    font-size: 3rem;
     margin-bottom: 0px;
     margin-top: 20px;
     text-align: center;
 }
 
 #about p {
-    font-size: 1.7rem;
+    font-size: 1rem;
     line-height: 1.4;
     margin-top: 0;
     margin-bottom: 20px;
@@ -247,13 +246,13 @@ footer p {
 
 #projects h1 {
     font-size: 2.5rem;
-    margin-bottom: 400px;
+    margin-bottom: 100px;
     color: #333;
 }
 
 .project-grid {
-    margin-top: 300px;
-    margin-bottom: 200px;
+    margin-top: 100px;
+    margin-bottom: 100px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -265,8 +264,8 @@ footer p {
     margin-top: 10px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 500px;
-    padding: 20px;
+    width: 350px;
+    padding: 15px;
     text-align: center;
 }
 
@@ -344,4 +343,147 @@ body {
     .grid-item {
         width: 100%;
     }
+}
+/* General Reset (already present, keeping for reference) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Hamburger Menu Icon */
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    align-items: center; /* Center lines horizontally */
+    justify-content: center; /* Center lines vertically */
+    gap: 5px;
+    cursor: pointer;
+    position: absolute;
+    right: 50%; /* Move the icon horizontally */
+    transform: translateX(50%); /* Center it exactly in the header */
+}
+
+.menu-icon .line {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+    transition: background-color 0.3s ease; /* Smooth transition for color change */
+}
+
+/* Mobile Navigation Menu */
+@media (max-width: 768px) {
+    nav ul {
+        display: none; /* Hide navigation links by default on small screens */
+        flex-direction: column;
+        position: absolute;
+        top: 70px; /* Adjust according to header height */
+        right: 20px;
+        background-color: #222222; /* Background for mobile menu */
+        padding: 10px;
+        border-radius: 5px;
+        width: 200px; /* Set width for the menu */
+        z-index: 100;
+    }
+
+    nav ul.show {
+        display: flex; /* Show navigation when toggled */
+    }
+
+    nav ul li {
+        margin: 10px 0; /* Spacing between items */
+    }
+
+    nav ul li a {
+        color: white; /* Ensure visibility */
+        font-size: 1rem; /* Adjust font size */
+    }
+
+    .menu-icon {
+        display: flex; /* Show hamburger icon on small screens */
+        position: absolute;
+        top: 60px;
+        right: 40px;
+        z-index: 101; /* Ensure it appears above the menu */
+    }
+}
+/* Center logo for mobile screens */
+@media (max-width: 768px) {
+    #logo {
+        margin: 0 auto; /* Center the logo horizontally */
+        margin-top: 10px;
+        text-align: center; /* Ensure the logo text/image is centered */
+    }
+
+    header {
+        justify-content: center; /* Center all header content */
+    }
+
+    nav ul {
+        display: none; /* Hide the navigation links initially */
+    }
+
+    .menu-icon {
+        position: absolute;
+        right: 20px; /* Place the hamburger icon on the right */
+        transform: none; /* Remove centering transform */
+    }
+}
+
+#shop-container {
+    max-width: 1200px;
+    margin: 200px auto;
+    text-align: center;
+}
+
+#shop-container h1 {
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    color: #ff5400;
+}
+
+.product {
+    display: inline-block;
+    width: 300px;
+    margin: 15px;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: left;
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+}
+
+.product h2 {
+    margin: 10px;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.product p {
+    margin: 10px;
+    font-size: .6rem;
+    color: #666;
+}
+
+.buy-button {
+    display: block;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    background-color: #ff5400;
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.buy-button:hover {
+    background-color: #e04a00;
 }

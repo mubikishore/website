@@ -1,23 +1,25 @@
-<!-- Projects Page -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects - MubiKishore</title>
+    <title>mubikishore - Home</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
     <!-- Header -->
     <header>
-        <div id="logo" style="text-align: center; margin-bottom: 20px;">
-            <a href="index.html">
-                <img src="assets/images/logo.png" alt="Logo" style="max-width: 300px;">
-            </a>
+        <div id="logo" style="text-align: center; margin-bottom: 0px;">
+            <img src="assets/images/logo.png" alt="Logo">
+        </div>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
         </div>
         <nav>
-            <ul>
+            <ul id="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="projects.html">Projects</a></li>
@@ -26,6 +28,7 @@
             </ul>
         </nav>
     </header>
+
 
     <!-- Projects Section -->
     <section id="projects">
@@ -61,5 +64,6 @@
         </ul>
         <p>&copy; 2025 MubiKishore. All rights reserved.</p>
     </footer>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
